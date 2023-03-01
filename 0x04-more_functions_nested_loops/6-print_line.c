@@ -1,18 +1,16 @@
 #include "main.h"
 
 /**
-*print_line - print straight line
-*@n: parameter
-*Return: nothing
-*/
+ * print_line - This function prints a straight line
+ * @n: an integer
+ * Return: 0
+ */
+
 void print_line(int n)
 {
-	int x;
+	char c;
 
-	if (n <= 0)
-	_putchar('\n');
-
-	for (x = 0; x <= n; x++)
-	_putchar(95);
+	for (c = 0; c < n; c++)
+		_putchar('_');
 	_putchar('\n');
 }
