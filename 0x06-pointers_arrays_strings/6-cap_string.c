@@ -1,24 +1,25 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * cap_string - capitalizes all words of a string
- * @n: input value
- *
- *
- * Return: string
+ * cap_string - This function capitalizes the first letter
+ * of all the words in the string
+ * @str: The string whose words are to be captitalized
+ * Return: 0
  */
-char *cap_string(char *n)
+char *cap_string(char *str)
 {
-	int i;
+	int letter = 0;
 
-	i = 0;
-	if (n[0] >= 'a' && n[0] <= 'z')
+	if (str[letter] >= 'a' && str[letter] <= 'z')
 	{
-		n[0] = n[0] - 32;
+		str[letter] = str[letter] - 32;
 	}
-	for (i = 0; n[i] != '\0'; i++)
+	for (letter = 0; str[letter] != '\0'; letter++)
 	{
-		switch (n[i])
+		switch (str[letter])
 		{
+			case ' ':
+			case '	':
+			case '\n':
 			case ',':
 			case ';':
 			case '.':
@@ -29,14 +30,11 @@ char *cap_string(char *n)
 			case ')':
 			case '{':
 			case '}':
-			case ' ':
-			case '\n':
-			case '\t':
-				if (n[i + 1] > 96 && n[i + 1] < 123)
+				if (str[letter + 1] > 96 && str[letter + 1] < 123)
 				{
-					n[i + 1] = n[i + 1] - 32;
+					str[letter + 1] = str[letter + 1] - 32;
 				}
 		}
 	}
-	return (n);
+	return (str);
 }

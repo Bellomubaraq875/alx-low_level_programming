@@ -1,25 +1,26 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * leet - encode into 1337speak
- * @n: input value
- *
- * Return: n value
+ * leet - This function replaces certain letters in the string with numbers
+ * @p: input value
+ * Return: 0
  */
-char *leet(char *n)
+char *leet(char *p)
 {
-	int i, j;
-	char s1[] = "aAeEoOtTlL";
-	char s2[] = "4433007711";
+	int letter;
+	int number;
 
-	for (i = 0; n[i] != '\0'; i++)
+	char string1[] = "aAeEoOtTlL";
+	char string2[] = "4433007711";
+
+	for (letter = 0; p[letter] != '\0'; letter++)
 	{
-		for (j = 0; j < 10; j++)
+		for (number = 0; number < 10; number++)
 		{
-			if (n[i] == s1[j])
+			if (p[letter] == string1[number])
 			{
-				n[i] = s2[j];
+				p[letter] = string2[number];
 			}
 		}
 	}
-	return (n);
+	return (p);
 }
